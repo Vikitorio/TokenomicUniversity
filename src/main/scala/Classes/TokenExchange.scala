@@ -1,14 +1,11 @@
 package Classes
 
-class TokenExchange(){
-  private var _startPrice = 0.0025d
-  private var _currentPrice :Double = 1.0d
+object TokenExchange{
+  private var _tokentBank = 1000000.0d
+  private var _fiatBank = 1000000.0d
+  private var _currentPrice :Double = 0.1d
 
-  def buyToken(): Unit = {
-
-  }
-
-  def sellToken(): Unit = {
-
-  }
+  def TokenBank: Double = _tokentBank
+  def FiatBank:Double= _fiatBank
+  def sellToken(User:UserTemplate): Boolean = {return false}
 }
