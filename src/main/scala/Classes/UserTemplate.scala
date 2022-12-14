@@ -21,8 +21,10 @@ abstract class UserTemplate (name:String = "-",surname:String = "-",age:String =
     _tokenBalance += tokens
   }
 
-  def FiatBalance: Double = _fiatBalance
+  def FiatBalance:Double = _fiatBalance
+  def set_FiatBalance(newValue:Double) {_fiatBalance = newValue}
   def TokenBalance:Double = _tokenBalance
+  def set_TokenBalance(newValue:Double) {_fiatBalance = newValue}
   def Name: String = _name
   def Surname: String = _surname
   def Age: String = _age
