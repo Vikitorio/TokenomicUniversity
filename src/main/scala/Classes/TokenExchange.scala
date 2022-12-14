@@ -12,17 +12,18 @@ object TokenExchange {
 
 
   def sellTokens(user: UserTemplate, amount: Double): Boolean ={
-    user.set_TokenBalance(user.TokenBalance - amount)
-    user.set_FiatBalance(user.FiatBalance + (amount * _currentPrice))
+    user.set_tokenBalance(user.get_tokenBalance - amount)
+    user.set_fiatBalance(user.get_fiatBalance + (amount * _currentPrice))
     _currentPrice -= amount * _oneTokenChange
     _sellStack += amount
     priceSupport()
     return true
   }
   def buyTokens(user: UserTemplate, amount: Double): Boolean = {
-    if (user.FiatBalance / _currentPrice < amount)  false
-    user.set_FiatBalance(user.FiatBalance - (amount * _currentPrice))
-    user.set_TokenBalance(user.TokenBalance + amount)
+    if (user.get_fiatBalance / _currentPrice < amount) {
+      return false}
+    user.set_fiatBalance(user.get_fiatBalance - (amount * _currentPrice))
+    user.set_tokenBalance(user.get_tokenBalance + amount)
     _currentPrice += amount * _oneTokenChange
     _buyStack += amount
     priceSupport()
@@ -45,6 +46,9 @@ object TokenExchange {
       _tokenBank -= priceDifference / _oneTokenChange
       _fiatBank += (priceDifference / _oneTokenChange) * ((_currentPrice + _minPrice) / 2)
     }
+  }
+  def addTokens(amount:Double): Unit ={
+    _tokenBank += amount
   }
   def TokenBank: Double = _tokenBank
   def FiatBank: Double = _fiatBank

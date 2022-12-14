@@ -5,14 +5,6 @@ class StudentList {
   def addStudent(tStudent:Student): Unit = {
     _list = tStudent :: _list
   }
-
-  def sortByGrades(): Unit ={
-    var temp:Student = new Student()
-    for(i <- _list.indices){
-      for (sort <-1 until _list.length) {
-            println(_list(sort)>_list(sort-1))
-      }
-    }
-
-  }
+  def sortByGrades(): Unit ={_list = _list.sortWith(_>_) }
+  def list: List[Student] = _list
 }
