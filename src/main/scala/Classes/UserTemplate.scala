@@ -1,4 +1,5 @@
 package Classes
+
 import scala.util.Random
 abstract class UserTemplate (login:String = "",password:String = "",name:String = "",surname:String = "",age:String = "",username:String = "",email:String = ""){
   protected val _random = new Random()

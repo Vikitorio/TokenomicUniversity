@@ -1,4 +1,5 @@
 package Classes
+
 import scala.io.StdIn.readLine
 class Simulation() {
  private var _defCoach: Coach = new Coach()
@@ -10,12 +11,12 @@ def addDefaultChars(): Unit ={
   var stu4 = new Student("gukir", "M345_23")
   var stu5 = new Student("piktoria", "chorna_1")
   var stu6 = new Student("Nidddka", "volovic4k")
-  _defCoach.get_office.list.addStudent(stu1)
-  _defCoach.get_office.list.addStudent(stu2)
-  _defCoach.get_office.list.addStudent(stu3)
-  _defCoach.get_office.list.addStudent(stu4)
-  _defCoach.get_office.list.addStudent(stu5)
-  _defCoach.get_office.list.addStudent(stu6)
+  _defCoach.get_office.addStudent(stu1)
+  _defCoach.get_office.addStudent(stu2)
+  _defCoach.get_office.addStudent(stu3)
+  _defCoach.get_office.addStudent(stu4)
+  _defCoach.get_office.addStudent(stu5)
+  _defCoach.get_office.addStudent(stu6)
 }
   def simulateOfficePeriod(taskCount:Int): Unit ={
     addDefaultChars()

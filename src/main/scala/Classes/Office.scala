@@ -1,4 +1,5 @@
 package Classes
+
 class Office(coach:Coach){
   private var _coach = coach
   private val _students:StudentList = new StudentList()
@@ -17,12 +18,16 @@ class Office(coach:Coach){
     }
     return str
   }
-  
+def addStudent(stud:Student): Unit ={
+  _students.addStudent(stud);
+  _studentsCount += 1;
+}
   def sortByGrades(): Unit ={
     _students.sortByGrades()
   }
   def removeStudent(login:String): Unit ={
     _students.list.filter(_.get_login == login)
+    _studentsCount -=1;
   }
   private  def giveGrades(): Unit ={
     for (i <- _students.list) {

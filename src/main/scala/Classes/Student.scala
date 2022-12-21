@@ -1,4 +1,5 @@
 package Classes
+
 class Student(login:String = "",password:String = "",name:String = "-",surname:String = "-",age:String = "-",username:String = "-",email:String = "-") extends UserTemplate(login,password,name,surname,age,username,email){
   private var _lastGrade:Int = 0
   private var _allGrades:List[Int] = List()
